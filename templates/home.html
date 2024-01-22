@@ -4,46 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <title> Careers job</title>
   <style>
-    h1{
-      font-size: 40px;
-      font-family: arial;
-      font-weight: 600;
-      color: red
-    }
     #banner{
-      width: 100%;
       height: 360px;
+      width: 100%;
       object-fit: cover;
-    }
-    h2{
-      font-family: arial;
-      font-size: 32px;
-      color: red;
-      text-align: center;
-    }
-    .bodytext{
-      font-family: arial;
-      color: green;
-    }
-    #container{
-      width: 730px;
-      margin : 0 auto;
-      
+      margin-bottom: 16px;
     }
   </style>
+  
 </head>
 <body>
-  <div id="container">
-  <h1>Job Careers</h1>
-  <img id="banner" src="https://faea8cd7-0c3a-4e8a-8380-9fa102c2ccd9-00-37x3gx4cqmgr8.sisko.replit.dev/static/web3.avif" height="320" >
-  <h2>About Careers</h2>
-  <p class="bodytext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <h2>Open Positions</h2>
-  <p class="bodytext">TODO - Show the jobs here</p>
-  <div style="text-align:center">
-  <button>Contact Us</button>
+  <div class="container">
+  <h1  class="text-center mt-2 mb-4">Job Careers</h1>
+  <img class="img-fluid" id="banner" src="https://faea8cd7-0c3a-4e8a-8380-9fa102c2ccd9-00-37x3gx4cqmgr8.sisko.replit.dev/static/web3.avif" height="320" >
+  <h2  class="text-center mt-2 mb-4">About Careers</h2>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <h2  class="text-center mt-2 mt-4">Open Positions</h2>
+  <div s>
+    {% for job in jobs %}
+     {% include 'jobitems.html' %}
+    {% endfor %}
+    
+  </div>
+  <div class="text-center">
+  <button class="btn btn-primary btn-lg">Contact Us</button>
+    <p class="mt-4">
+      Copyright 2024, vidya
+    </p>
   </div>
 </body>
 </html>
