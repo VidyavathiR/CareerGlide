@@ -17,6 +17,7 @@
   
 </head>
 <body>
+  {% include 'nav.html' %}
   <div class="container">
   <h1  class="text-center mt-2 mb-4">Job Careers</h1>
   <img class="img-fluid" id="banner" src="https://faea8cd7-0c3a-4e8a-8380-9fa102c2ccd9-00-37x3gx4cqmgr8.sisko.replit.dev/static/web3.avif" height="320" >
@@ -30,10 +31,11 @@
     
   </div>
   <div class="text-center">
-  <button class="btn btn-primary btn-lg">Contact Us</button>
+  <a href="mailto:career@gmail.com?subject=contact%20&body=Name%20%3A%20%3CYour%20Name%3E%0D%0AQuestions%20%3A%20%3CYour%20Questions%3E%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
     <p class="mt-4">
       Copyright 2024, vidya
     </p>
   </div>
+    {% include 'footer.html' %}
 </body>
 </html>
