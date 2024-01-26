@@ -1,6 +1,26 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
+
+app.config['MYSQL_HOST'] = "localhost"
+app.config['MYSQL_USER'] = "root"
+app.config['MYSQL_PASSWORD'] = "vidya2812"
+app.config['MYSQL_DB'] = "flask"
+
+mysql = MySQL(app)
+
+
+@app.route("/users")
+def users():
+  cur = mysql.connection.cursor()
+  result = cur.execute("SELECT * FROM jobs")
+  if result > 0:
+    userdetails = cur.fetchall()
+    return render_template("user.html", userdetails=jobs)
+  else:
+    return "No users found"
+
 
 JOBS = [{
     'id': 1,
