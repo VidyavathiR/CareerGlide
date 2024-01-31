@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title> Careers job</title>
-  <style>
-    #banner{
-      height: 360px;
-      width: 100%;
-      object-fit: cover;
-      margin-bottom: 16px;
-    }
-  </style>
-  
+  {% include "bootstrap.html" %}
+  <title> CareerGlide</title>
+  <link rel="stylesheet" href="/static/style.css" >
 </head>
 <body>
-  {% include 'nav.html' %}
+
+<!-------------nav bar ------------->
+ {% include "nav.html" %}
+
+<!-- ------------heading-------------- -->
+<div id="header1">
+  <div class="head">
+    <h1  class="text-center mt-2 mb-4">Career Glide</h1>
+  </div> 
+</div>
+
+<!-- ------------about-------------- -->
+<div id="about">
   <div class="container">
-  <h1  class="text-center mt-2 mb-4">Job Careers</h1>
-  <img class="img-fluid" id="banner" src="https://faea8cd7-0c3a-4e8a-8380-9fa102c2ccd9-00-37x3gx4cqmgr8.sisko.replit.dev/static/web3.avif" height="320" >
-  <h2  class="text-center mt-2 mb-4">About Careers</h2>
-  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <h2  class="text-center mt-2 mt-4">Open Positions</h2>
-  <div s>
-    {% for job in jobs %}
-     {% include 'jobitems.html' %}
-    {% endfor %}
-    
+      <div class="row">
+          <div class="about-col1">
+            {% include "banner.html" %}
+          </div>
+          <div class="about-col2">
+            <h2 class="subtitle mb-4">About CareerGlide</h2>
+               <p>Welcome to CareerGlide, where we believe in empowering individuals to achieve their career aspirations with confidence and ease. Our mission is to provide a seamless platform that fosters professional growth, connects talent with opportunities, and guides you on a journey of continuous success in your chosen career path.
+               </p>  
+               <h4>Our Vision</h4>
+               <p>At CareerGlide, we envision a world where every individual has the tools and support needed to navigate their career journey effortlessly. Whether you're a recent graduate stepping into the professional world or a seasoned professional seeking new horizons, CareerGlide is your trusted companion in the pursuit of career excellence.</p> 
+          </div>
+        </div>
   </div>
-  <div class="text-center">
-  <a href="mailto:career@gmail.com?subject=contact%20&body=Name%20%3A%20%3CYour%20Name%3E%0D%0AQuestions%20%3A%20%3CYour%20Questions%3E%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
-    <p class="mt-4">
-      Copyright 2024, vidya
-    </p>
-  </div>
-    {% include 'footer.html' %}
+</div>
+
+<!-- -----------job positions------------- -->
+<div id="jobposition">
+    <div class="subtitle">
+      <h2  class="text-center mt-2 mt-4">Open Positions</h2>
+    </div> 
+    <div class="list">
+      {% for job in jobs %}
+      {% include 'jobitems.html' %}
+      {% endfor %}
+    </div>
+</div>
+
+
+<!----------------------contact---------------------------->
+<div id="contact">
+{% include "footer.html" %}
+</div>
+
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/static/style.css" >
+</head>
+<body>
+    <div class="text-center">
+        <h2 class=" mt-4 mb-4">Application Form</h2>
+        <form action="/job/{{job['id']}}/apply" method="POST">
+            <div class="mb-2">
+                <label class="label">Full Name</label><br>
+                <input type="text" name="full_name" placeholder="Jim" ><br>
+            </div>
+            <div class="mb-2">
+            <label class="label">Email</label><br>
+            <input type="text" name="email" placeholder="Jim@gmail.com" ><br>
+            </div>
+            <div class="mb-2"> 
+            <label class="label">LinkedIn</label><br>
+            <input type="url" name="linkedin_url" placeholder="https://linked.com/in/jim" ><br>
+            </div>
+            <div class="mb-2"> 
+                <label class="label">Education</label><br>
+                <textarea name="education" placeholder="education" ></textarea>
+            </div>
+            <div class="mb-2"> 
+                <label class="label">Work Experience</label><br>
+                <textarea name="workexperience" placeholder="experience" ></textarea>
+            </div>
+            <div class="mb-2"> 
+                <label class="label">Resume</label><br>
+                <input type="url" name="resume_url" placeholder="https://resume" ><br>
+            </div>
+            <div class="mb-2">
+                <input class="btn btn-outline-secondary"s type="submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Application Submitted</title>
+        {% include "bootstrap.html" %}
+    </head>
+    <body>
+        {% include 'nav.html' %}
+        <div class="head">
+            {% include "banner.html" %}
+        </div>
+        <div class="container  ">
+            <h1  class="text-center mt-2 mb-4">Career Glide</h1>
+            <p class="text-center fs-2"><b>Your application for the role of {{job['Title']}} has been submitted.</b></p>
+            <h3>Name</h3>
+            <div class="mb-4">{{application['full_name']}}</div>
+
+            <h3>Email</h3>
+            <div class="mb-4">{{application['email']}}</div>
+
+            <h3>LinkedIn URL</h3>
+            <div class="mb-4">{{application['linkedin_url']}}</div>
+
+            <h3>Resume URL</h3>
+            <div class="mb-4">{{application['resume_url']}}</div>
+
+            <h3>Education</h3>
+            <div class="mb-4">{{application['education']}}</div>
+
+            <h3>Work Experience</h3>
+            <div class="mb-4">{{application['workexperience']}}</div>
+        </div>
+        {% include "footer.html" %}
+    </body>
+
+</html>

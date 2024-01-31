@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(0, 0, 0);
+    color: #fff; 
+}
+
+/*-------------nav bar--------------*/
+#header{
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+ }
+ #header h1{
+    font-weight: 700;
+    font-size: 70px;
+ }
+
+#logo  span{
+    color:black;
+    font-size: 40px;
+}
+
+#logo{
+    color: black;
+    font-family:cursive;
+    width: 140px;
+    font-size: 20px;
+}
+nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+
+nav ul li{
+    display:inline-block ;
+    list-style: none;
+    margin: 30px 30px;
+}
+
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+
+nav ul li a::after{
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background:;
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    transition: 0.5s;   
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+
+}
+.head{
+    margin-top: 90px;
+}
+.head h1{
+    font-size: 70px;
+}
+
+/*-----about----------------*/
+
+#about{
+    padding: 50px 0;
+    color: #fff;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap ;
+}
+
+.about-col1{
+    flex-basis: 50%;
+}
+
+.about-col1 img{
+    width: 100%;
+    border-radius: 15px;
+
+}
+
+.about-col2{
+    flex-basis: 50%;
+}
+
+.subtitle{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+/*----------------jobpositions---------------- */
+.list div{
+    background: #100f0f;
+    padding: 2px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+
+}
+
+.list div:hover{
+    background:linear-gradient(white);
+    transform: translateY(-10px);
+
+}
+
+/*----------------contact----------------- */
+
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    margin-top: 20px;
+}
+
+/*----------------application----------------- */
+form input, form textarea{
+
+    border: 0;
+    outline: none;
+    background-color: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}

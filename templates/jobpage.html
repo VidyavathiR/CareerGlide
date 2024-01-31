@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{job.Title}} Career Glide</title>
+        <link rel="stylesheet" href="/static/style.css" >
+        {% include "bootstrap.html" %}
+    </head>
+    <body>
+        {% include 'nav.html' %}
+        <div class="head">
+            {% include "banner.html" %}
+        </div>
+
+        <div class="container">
+            <h1  class="text-center ">Career Glide</h1>
+
+            <h2>{{job.Title}}</h2>
+
+            <p>Location: {{job.Location}}</p>
+            <h3>Salary</h3>
+            <p>{{job.Salary}}</p>
+            <h3>Responsibilities</h3>
+            <ul>
+                {% for line in job.Responsibilities.split("\n") %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul> 
+
+            <h3>Requirements</h3>
+            <ul>
+                {% for line in job.Requirements.split("\n") %}
+                    <li>{{line}}</li>
+                {% endfor %}
+            </ul> 
+
+            {% include "application_form.html" %}
+        </div>
+        {% include "footer.html" %}
+    </body>
+
+</html>
