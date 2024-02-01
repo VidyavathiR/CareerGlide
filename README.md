@@ -21,7 +21,7 @@ Career Glide is a web application designed to empower users in their career jour
   - Highlight your skills through an interactive skills matrix.
 
 - **Contact Form:**
-  - Easily connect with the platform administrators.
+  - Easily connect with the administrators.
 
 - **Database Integration:**
   - MySQL for efficient data management.
