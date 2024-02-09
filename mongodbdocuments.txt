@@ -1,0 +1,115 @@
+from pymongo import MongoClient
+
+# Initialize MongoDB client and connect to the database
+client = MongoClient('mongodb://localhost:27017/')
+db = client['career']  # Assuming 'and' is the name of your MongoDB database
+jobs_collection = db['jobs']
+
+# Define the list of job data with modified salary field and new currency field
+jobs_data = [
+    {
+        'id': '1',
+        'Title': 'Data Analyst',
+        'Location': 'Bengaluru, India',
+        'Salary': 500000,
+        'Currency': 'Rs.',
+        'Description': 'A data analyst plays a crucial role in extracting meaningful insights from data to inform business decisions.\nThey are responsible for collecting data from diverse sources, cleaning and preprocessing it to ensure accuracy, and performing in-depth analysis to identify patterns and trends. \nUtilizing statistical methods and machine learning algorithms, data analysts develop models for predictive analytics.',
+        'Requirements': 'The ideal candidate for the data analyst position should possess a strong analytical mindset and proficiency in data manipulation tools such as SQL and Python.\n Excellent communication skills, attention to detail, and the ability to derive actionable insights from complex datasets are crucial. \nA bachelor\'s degree in a relevant field is preferred.',
+        'Responsibilities': 'Responsibilities of a data analyst include collecting, cleaning, and preprocessing data, analyzing data to identify patterns and trends, and developing predictive models using statistical methods and machine learning algorithms.'
+    },
+    {
+        'id': '2',
+        'Title': 'Data Scientist',
+        'Location': 'Delhi, India',
+        'Salary': 800000,
+        'Currency': 'Rs.',
+        'Description': 'The ideal candidate for the role of data scientist at our company should possess a strong background in statistics, machine learning, and data analysis. \nProficiency in programming languages such as Python and R, along with expertise in data visualization tools, is essential.\n Excellent communication skills and the ability to derive actionable insights from complex data sets are also crucial.',
+        'Requirements': 'The role of a data scientist requires advanced proficiency in programming languages like Python or R, coupled with strong statistical and analytical skills.\nA data scientist at our company plays a pivotal role in extracting valuable insights from vast datasets, employing advanced statistical methods and machine learning techniques. They collaborate with cross-functional teams to solve complex business problems, contribute to data-driven decision-making, and continuously enhance our analytics capabilities for strategic growth and innovation.',
+        'Responsibilities': 'Responsibilities of a data scientist include analyzing data, developing predictive models, collaborating with cross-functional teams, and continuously enhancing analytics capabilities.'
+    },
+    {
+        'id': '3',
+        'Title': 'Software Engineer',
+        'Location': 'Mumbai, India',
+        'Salary': 1000000,
+        'Currency': 'Rs.',
+        'Description': 'As a software engineer at our company, you will play a pivotal role in designing, developing, and maintaining cutting-edge software solutions. \nYour responsibilities include collaborating with cross-functional teams, troubleshooting issues, and ensuring the scalability and efficiency of our software products.\n Your innovative contributions will drive the success of our projects.',
+        'Requirements': 'The ideal software engineer for our company should possess a strong foundation in computer science, proficiency in programming languages, and a proven track record of designing and implementing scalable software solutions. \nStrong problem-solving skills, collaborative mindset, and a commitment to staying updated on emerging technologies are essential attributes for success in this role.',
+        'Responsibilities': 'Responsibilities of a software engineer include designing, developing, and maintaining software solutions, collaborating with cross-functional teams, and ensuring scalability and efficiency.'
+    },
+    {
+        'id': '4',
+        'Title': 'Frontend Developer',
+        'Location': 'Remote',
+        'Salary': 700000,
+        'Currency': 'Rs.',
+        'Description': 'As a front-end developer at our company, your responsibilities include creating visually appealing and responsive user interfaces, collaborating with the design team to implement their concepts, ensuring seamless navigation and user experience, and staying updated on emerging technologies.\n Your role is pivotal in enhancing the overall aesthetics and functionality of our digital platforms.',
+        'Requirements': 'We are seeking a talented front-end developer to join our dynamic team. \nThe ideal candidate should have a strong proficiency in HTML, CSS, and JavaScript, with a keen eye for design and user experience. \nKnowledge of modern frameworks and a passion for staying updated with industry trends is essential.',
+        'Responsibilities': 'Responsibilities of a front-end developer include creating user interfaces, collaborating with design teams, ensuring user experience, and staying updated on technologies.'
+    },
+    {
+        'id': '5',
+        'Title': 'Backend Developer',
+        'Location': 'Pune, India',
+        'Salary': 800000,
+        'Currency': 'Rs.',
+        'Description': 'As a back-end developer at our company, your responsibilities will include designing, developing, and maintaining server-side logic, databases, and APIs to ensure seamless functionality of our web applications. \nCollaborate with front-end developers, troubleshoot issues, and optimize system performance for a robust and scalable backend infrastructure.',
+        'Requirements': 'The ideal back-end developer for our company should possess strong proficiency in server-side technologies, database management, and API integration. \nA solid understanding of programming languages such as Java, Python, or Node.js is essential.\n Experience in optimizing system performance and ensuring data security is crucial for this role.',
+        'Responsibilities': 'Responsibilities of a back-end developer include designing, developing, and maintaining server-side logic, collaborating with front-end developers, and optimizing system performance.'
+    },
+    {
+        'id': '6',
+        'Title': 'UI/UX Designer',
+        'Location': 'Remote',
+        'Salary': 900000,
+        'Currency': 'Rs.',
+        'Description': 'As a UI/UX designer at our company, you will play a pivotal role in creating seamless and visually appealing digital experiences. \nResponsibilities include conducting user research, crafting intuitive interfaces, collaborating with cross-functional teams, and staying abreast of design trends.\n Your creativity and attention to detail will elevate our products and enhance user satisfaction.',
+        'Requirements': 'The ideal UI/UX designer for our company should possess a strong foundation in user interface and experience design, with proficiency in industry-standard tools.\n Demonstrated creativity, problem-solving skills, and a keen eye for aesthetics are crucial.\n Effective communication and collaboration within cross-functional teams to deliver intuitive and visually appealing designs are essential.',
+        'Responsibilities': 'Responsibilities of a UI/UX designer include conducting user research, designing interfaces, collaborating with teams, and staying updated on design trends.'
+    },
+    {
+        'id': '7',
+        'Title': 'Marketing Manager',
+        'Location': 'Bengaluru, India',
+        'Salary': 500000,
+        'Currency': 'Rs.',
+        'Description': 'As a marketing manager at our company, you will play a pivotal role in developing and executing comprehensive marketing strategies.\n Your responsibilities include market research, campaign planning, budget management, and team leadership. \nDrive brand awareness and customer engagement through innovative and effective marketing initiatives, contributing to the company\'s overall success.',
+        'Requirements': 'The ideal candidate for the Marketing Manager position should possess a proven track record in developing and executing successful marketing strategies. \nStrong leadership, analytical, and communication skills are essential. \nA deep understanding of market trends, consumer behavior, and digital marketing is crucial. \nJoin us in driving our brand to new heights.',
+        'Responsibilities': 'Responsibilities of a marketing manager include developing marketing strategies, conducting market research, managing budgets, and leading teams.'
+    },
+    {
+        'id': '8',
+        'Title': 'Web Designer',
+        'Location': 'Remote',
+        'Salary': 700000,
+        'Currency': 'Rs.',
+        'Description': 'As a web designer for our company, you will be responsible for creating visually appealing and user-friendly websites. \nYour role involves collaborating with cross-functional teams to understand project requirements, designing responsive layouts, and ensuring a seamless user experience. \nAdditionally, you will stay updated on industry trends to enhance our online presence.',
+        'Requirements': 'A skilled web designer for our company should possess a strong proficiency in HTML, CSS, and JavaScript.\n A keen eye for design aesthetics, understanding of user experience principles, and proficiency in graphic design tools are essential. \nExcellent communication skills and the ability to collaborate with cross-functional teams are also key requirements.',
+        'Responsibilities': 'Responsibilities of a web designer include creating visually appealing websites, collaborating with teams, and staying updated on industry trends.'
+    },
+    {
+        'id': '9',
+        'Title': 'Server Engineer',
+        'Location': 'Remote',
+        'Salary': 800000,
+        'Currency': 'Rs.',
+        'Description': 'A server engineer at our company is responsible for the design, implementation, and maintenance of our server infrastructure.\n This includes ensuring the reliability, security, and optimal performance of servers. \nCollaborating with cross-functional teams, they troubleshoot issues, implement upgrades, and contribute to the overall stability and efficiency of our IT environment.',
+        'Requirements': 'The ideal server engineer for our company possesses a strong foundation in server infrastructure, system administration, and networking.\nProficiency in deploying and managing servers, ensuring optimal performance, and troubleshooting issues is essential. \nAdeptness in security protocols, virtualization technologies, and the ability to collaborate with cross-functional teams are valued assets.',
+        'Responsibilities': 'Responsibilities of a server engineer include designing, implementing, and maintaining server infrastructure, troubleshooting issues, and collaborating with teams.'
+    },
+    {
+        'id': '10',
+        'Title': 'Technical Engineer',
+        'Location': 'Delhi, India',
+        'Salary': 600000,
+        'Currency': 'Rs.',
+        'Description': 'As a technical engineer at our company, your responsibilities will encompass designing, implementing, and maintaining technical solutions.\n You\'ll collaborate with cross-functional teams, troubleshoot issues, and ensure the seamless integration of cutting-edge technologies. \nYour expertise will be pivotal in driving innovation and maintaining the high-performance standards expected in our dynamic work environment.',
+        'Requirements': 'Our company seeks a highly skilled technical engineer with a strong foundation in problem-solving and technical expertise. \nThe ideal candidate should possess a degree in engineering, hands-on experience in troubleshooting and maintenance, and proficiency in relevant software.\n Effective communication and a proactive approach to challenges are essential attributes for success in this role.',
+        'Responsibilities': 'Responsibilities of a technical engineer include designing, implementing, and maintaining technical solutions, collaborating with teams, and troubleshooting issues.'
+    }
+]
+
+# Insert the list of job data into the jobs collection
+jobs_collection.insert_many(jobs_data)
+
+print("All job documents with 'Responsibilities' key have been added to the jobs collection.")

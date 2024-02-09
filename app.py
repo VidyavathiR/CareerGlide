@@ -12,7 +12,7 @@ def web():
 @app.route("/api/jobs")
 def listjobs():
   jobs = load_jobs_from_db()
-  return jsonify(jobs)
+  return jobs
 
 @app.route("/job/<id>")
 def show_jobs(id):
