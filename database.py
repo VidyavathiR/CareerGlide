@@ -61,9 +61,12 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-# Assuming you have initialized your MongoDB client and connected to a database
-client = MongoClient('mongodb://localhost:27017/')
-db = client['career']  # Assuming 'career' is the name of your MongoDB database
+
+# mongodb localhost connection
+# client = MongoClient('mongodb://localhost:27017/')
+# mongdb atlas connection
+client = MongoClient('mongodb+srv://vidya:vidya@cluster0.zrwikzd.mongodb.net/')
+db = client['career']  #  'career' is the name of your MongoDB database
 applications_collection = db['applications']
 
 
