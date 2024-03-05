@@ -66,7 +66,7 @@ app = Flask(__name__)
 # client = MongoClient('mongodb://localhost:27017/')
 # mongdb atlas connection
 client = MongoClient('mongodb+srv://vidya:vidya@cluster0.zrwikzd.mongodb.net/')
-db = client['career']  #  'career' is the name of your MongoDB database
+db = client['career']  #  'career' is the name of the MongoDB database
 applications_collection = db['applications']
 
 
